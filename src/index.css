@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.white {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.icon{
+    float: right;
+    margin:0 10px;
+    cursor: pointer;
+}
+
+.step-header-container {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 20px 0;
+}
+
+.step-header {
+    max-width: 640px;
+    margin: 0 auto 30px;
+}
+h2{
+    margin-bottom: 20px;
+}
+.numberCircle.active {
+    background: #27bdaf;
+    color: white;
+    border-color: #d3dbdc;
+}
+
+.btn{
+    margin: 10px;
+}
+
+.review {
+    max-width: 640px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.review h4 {
+        background: #40707b;
+        padding: 10px;
+        color: white;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+    font: 16px Arial, sans-serif;
+}
