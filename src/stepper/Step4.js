@@ -14,7 +14,7 @@ class Step4 extends React.Component {
 
   render() {
   debugger
-  const {username, email, phone} = this.props.formData.step1;
+  const {username, email, phone, address, gender} = this.props.formData.step1;
   const {notwell} = this.props.formData.step2;
   const {modeofpayment} = this.props.formData.step3;
   const btnDisabled = username && email && phone;
@@ -24,17 +24,17 @@ class Step4 extends React.Component {
                         <div className="review step1">
                             <h4>Step1 <i className="fa fa-pencil-square-o icon"
                                         aria-hidden="true"
-                                        onClick={()=> this.props.setActiveStep(1)}></i>
+                                        onClick={()=> this.props.setActiveStep(1)}> Edit</i>
                             </h4>
                             {!username && !email && !phone &&
-                                <p> {`Please fill up details on step1 in order to submit`}</p>
+                                <p> {`Please fill up all details on step1 in order to submit`}</p>
                             }
 
                             {username &&
-                            <div>
+                            <p>
                                 <span>Name: </span>
                                 {username}
-                              </div>
+                              </p>
                              }
                              {email &&
                               <p>
@@ -48,12 +48,24 @@ class Step4 extends React.Component {
                                   {this.props.formData.step1.phone}
                                 </p>
                                 }
+                                {address &&
+                                  <p>
+                                      <span>Address: </span>
+                                      {this.props.formData.step1.address}
+                                    </p>
+                                    }
+                                {gender &&
+                                  <p>
+                                      <span>Gender: </span>
+                                      {this.props.formData.step1.gender}
+                                    </p>
+                                    }
                           </div>
 
                           <div className="review step2">
                               <h4>Step2 <i className="fa fa-pencil-square-o icon"
                                             aria-hidden="true"
-                                            onClick={()=> this.props.setActiveStep(2)}></i>
+                                            onClick={()=> this.props.setActiveStep(2)}> Edit</i>
                               </h4>
 
 
@@ -67,7 +79,7 @@ class Step4 extends React.Component {
                             <div className="review step3">
                                 <h4>Step3 <i className="fa fa-pencil-square-o icon"
                                                 aria-hidden="true"
-                                                onClick={()=> this.props.setActiveStep(3)}></i>
+                                                onClick={()=> this.props.setActiveStep(3)}> Edit</i>
                                 </h4>
                                  <p>
                                   <span>Mode of payment: </span>

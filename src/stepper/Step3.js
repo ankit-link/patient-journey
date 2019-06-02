@@ -1,11 +1,19 @@
 import React from 'react';
 
+
+
 class Step3 extends React.Component {
 
   constructor(props) {
     super(props);
     debugger
-    this.state = {value: this.props.formData.modeofpayment};
+    this.state = {
+        value: this.props.formData.modeofpayment,
+          startDate: new Date(),
+          format: "YYYY-MM-DD",
+          inputFormat: "DD/MM/YYYY",
+          mode: "date"
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,6 +40,9 @@ class Step3 extends React.Component {
     return (
         <div className="text-center">
                     <h2>Slot and Payment</h2>
+
+
+
 
                     <div className="form-group row">
                         <label>

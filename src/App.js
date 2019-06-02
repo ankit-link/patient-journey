@@ -16,7 +16,9 @@ class App extends React.Component {
             step1: {
                 username: '',
                 phone: '',
-                email: ''
+                email: '',
+                gender: 'male',
+                address: ''
             },
             step2: {
                 notwell: ''
@@ -65,6 +67,7 @@ class App extends React.Component {
 
     hydrateStateWithLocalStorage() {
         // for all items in state
+        debugger;
         for (let key in this.state) {
           // if the key exists in localStorage
           if (localStorage.hasOwnProperty(key)) {
@@ -113,6 +116,12 @@ class App extends React.Component {
              case 'email':
                 obj= {email: val}
                 break;
+             case 'address':
+                obj={address: val}
+                break;
+            case 'gender':
+                obj={gender: val}
+                break;
         }
         this.setState({
             step1: {
@@ -136,7 +145,9 @@ class App extends React.Component {
                     step1: {
                         username: '',
                         phone: '',
-                        email: ''
+                        email: '',
+                        address: '',
+                        gender: ''
                     }
                 })
     }

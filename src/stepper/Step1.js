@@ -8,7 +8,9 @@ class Step1 extends React.Component {
     this.state = {
         username: this.props.formData.username,
         phone: this.props.formData.phone,
-         email: this.props.formData.email
+         email: this.props.formData.email,
+         gender: this.props.formData.gender,
+         address: this.props.formData.address
 
     }
    }
@@ -18,7 +20,9 @@ class Step1 extends React.Component {
      this.setState({
         username: nextProps.formData.username,
         phone: nextProps.formData.phone,
-        email: nextProps.formData.email
+        email: nextProps.formData.email,
+        gender: nextProps.formData.gender,
+        address: nextProps.formData.address
 
       });
    }
@@ -41,7 +45,14 @@ class Step1 extends React.Component {
                 this.setState({ email: val })
                 this.props.setStep1(field, val)
                 break
-
+            case "address":
+                this.setState({ address: val })
+                this.props.setStep1(field, val)
+                break
+            case "gender":
+                this.setState({ gender: val })
+                this.props.setStep1(field, val)
+                break
 
         }
 
@@ -78,6 +89,24 @@ class Step1 extends React.Component {
                             onChange={this.handleChange}
                             required />
                     </p>
+                    <p>
+                        <label> Address </label>
+
+                      <textarea name="address" value={this.state.address} onChange={this.handleChange} />
+
+                    </p>
+
+
+
+                    <p>
+                    <label>Gender: </label>
+                          <select name="gender" value={this.state.gender} onChange={this.handleChange}>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+
+                          </select>
+                          </p>
 
                     <button type="button" class="btn btn-primary" onClick={this.props.resetStep1}>Reset</button>
                     <button type="button" class="btn btn-success" onClick={() => this.props.setActiveStep(2)}>Next</button>
